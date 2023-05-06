@@ -1,0 +1,38 @@
+https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
+
+# flask
+pip install flask
+Running just the flask bit.
+export FLASK_APP=inbound
+export FLASK_ENV=development
+flask run  
+
+## postgres
+https://github.com/PostgresApp/PostgresApp
+https://postgresapp.com/documentation/cli-tools.html
+
+brew install postgresql@14
+brew services start postgresql@14
+
+
+createdb nodedata
+psql nodedata
+nodedata=# psql -U postgres -c "createuser flaskuser"
+nodedata-# psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE mydatabase TO flaskuser;"
+
+psql -h localhost -U flaskuser -d nodedata
+
+CREATE TABLE mytable (
+    server_name TEXT PRIMARY KEY,
+    data1 JSONB,
+    data2 JSONB,
+    data3 JSONB
+);
+
+
+
+test
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{"server": "node1", "data": ["data1", "data2", "data3"]}' \
+     http://localhost:5000/api/data

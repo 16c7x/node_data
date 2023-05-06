@@ -11,8 +11,7 @@ The purpose of this is to create a simple data store where data for a node can b
 # Design
 1. Create a backend database to store the data.
 2. Create some code that can updated the database.
-3. An end point that can recieve the data.
+3. An end point that can receive the data.
 
-
-
+# running
 
